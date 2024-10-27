@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "iul-service-new"
+version = "0.1.0"
+description = ""
+authors = ["NickolayBabulich <nickolas.grn@icloud.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "^5.1.2"
+django-environ = "^0.11.2"
+psycopg2-binary = "^2.9.10"
+
+
+[tool.poetry.group.dev.dependencies]
+django-debug-toolbar = "^4.4.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
