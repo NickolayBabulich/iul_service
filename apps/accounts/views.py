@@ -1,6 +1,6 @@
 from django.contrib.auth.views import LoginView, PasswordResetView
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, TemplateView
 
 from apps.accounts.forms import CustomUserCreationForm
 
@@ -15,5 +15,11 @@ from apps.accounts.forms import CustomUserCreationForm
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy('signup')
+    success_url = reverse_lazy('accounts:signup-done')
     template_name = 'accounts/signup.html'
+
+class SignUpDoneView(TemplateView):
+    template_name = 'accounts/signup_done.html'
+
+class SignUpConfirmView(TemplateView):
+    template_name = 'accounts/signup_confirm.html'

@@ -49,19 +49,19 @@
         </div>
 
         {% if form.non_field_errors %}
-            <div class="alert alert-danger alert-form__login">
-                <div class="success-box-title">
+            <div class="info-box info-box--error">
+                <div class="info-box-title info-box-title--error">
                     <i class="bi bi-exclamation-circle"></i>
                     Предупреждение
                 </div>
-                <p class="mb-0">
                     {{ form.non_field_errors }}
-                </p>
             </div>
         {% endif %}
 
         <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-register text-white">Войти</button>
+            <button type="submit" class="btn btn-auth">
+                Войти в систему
+            </button>
         </div>
 
         <div class="form-links">
