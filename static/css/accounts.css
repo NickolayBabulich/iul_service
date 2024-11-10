@@ -91,7 +91,8 @@
 }
 
 .auth-form__title--reset-info,
-.confirmation-title--complete {
+.confirmation-title--complete,
+.auth-form__title--reset-error{
     animation: fadeIn 0.5s ease-out 0.3s both;
 }
 

@@ -9,6 +9,13 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         fields = ('email',)
 
+    def save(self, commit=True):
+        user = super(CustomUserCreationForm, self).save(commit=False)
+        user.is_active = False
+        if commit:
+            user.save()
+        return user
+
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):

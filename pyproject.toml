@@ -1,3 +1,10 @@
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+ignore = ["F405", "F403"]
+
 [tool.poetry]
 name = "iul-service-new"
 version = "0.1.0"
@@ -14,6 +21,7 @@ psycopg2-binary = "^2.9.10"
 
 [tool.poetry.group.dev.dependencies]
 django-debug-toolbar = "^4.4.6"
+ruff = "^0.7.3"
 
 [build-system]
 requires = ["poetry-core"]

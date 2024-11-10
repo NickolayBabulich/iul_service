@@ -49,7 +49,9 @@ urlpatterns = [
              extra_context={'page_title': 'Пароль изменен'}
          ),
          name='password_reset_complete'),
-    path('signup/done/', views.SignUpDoneView.as_view(), name='signup-done'),
-    path('signup/confirm/', views.SignUpConfirmView.as_view(), name='signup-confirm'),
+    path('signup/done/', views.SignUpDoneView.as_view(), name='signup_done'),
+    path('signup/confirm/', views.SignUpConfirmView.as_view(), name='signup_confirm'),
+
+    path('verify/<uidb64>/<token>/', views.EmailVerificationView.as_view(), name='verify_email'),
 
 ]

@@ -1,7 +1,8 @@
+from datetime import timedelta
 from pathlib import Path
 import os
 import environ
-from django.conf.global_settings import LOGIN_REDIRECT_URL
+from django.utils import timezone
 
 env = environ.Env()
 
@@ -209,5 +210,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 FILE_UPLOAD_MAX_MEMORY_SIZE = 2621440  # 2.5 MB
 FILE_UPLOAD_PERMISSIONS = 0o644
 
-LOGIN_REDIRECT_URL = '/admin/'
 LOGOUT_REDIRECT_URL = '/auth/signin/'
+
+
+PASSWORD_RESET_TIMEOUT = timedelta(minutes=env('VERIFICATION_TOKEN_EXPIRY', default=15)).total_seconds()
